@@ -11484,13 +11484,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7638567965276652674, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638567965276652674, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7857617589909566110, guid: b1710716025796345b135f179ef6775c, type: 3}
       propertyPath: m_Size.y
       value: 1.0215478
       objectReference: {fileID: 0}
     - target: {fileID: 7857617589909566110, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f2d4430e8514aef449c6f333fe647f2e, type: 2}
+    - target: {fileID: 7857617589909566110, guid: b1710716025796345b135f179ef6775c, type: 3}
       propertyPath: m_Offset.y
       value: 0.0075671673
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335234288223049392, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335234288223049392, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
