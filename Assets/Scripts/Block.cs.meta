@@ -3,7 +3,9 @@ guid: 363cad9bcbdcb6d4db771ef54583899d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
+  - bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
