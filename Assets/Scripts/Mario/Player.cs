@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Move();
+        moveInput = Input.GetAxisRaw("Horizontal"); // Obtiene el input horizontal
+        
+        
+        
         CheckJump();
 
         // Actualiza los parámetros del Animator
@@ -40,14 +43,19 @@ public class Player : MonoBehaviour
         animator.SetBool("isJumping", !isGrounded);  // Si está saltando
         animator.SetBool("isRunning", isRunning);  // Si está corriendo
     }
-
+    private void FixedUpdate()
+    {
+        Move();
+    }
+    
     // Mueve al jugador
     void Move()
     {
-        moveInput = Input.GetAxisRaw("Horizontal"); // Obtiene el input horizontal
+        
 
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
-        Vector2 force = new Vector2(moveInput * currentSpeed * 2f, 0); // Multiplicamos por 10 para más respuesta
+        Vector2 force = new Vector2(moveInput * currentSpeed * 2f, 0); 
+       // rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
 
         rb.AddForce(force, ForceMode2D.Force); // Aplica la fuerza de manera progresiva
 
@@ -55,29 +63,28 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -currentSpeed, currentSpeed), rb.velocity.y);
 
         // Cambia la dirección de Mario
-        if (moveInput < 0)
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        else if (moveInput > 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+        
+    
+        if (moveInput < 0)  // Si se mueve hacia la izquierda
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);  
+        }
+        else if (moveInput > 0)  // Si se mueve hacia la derecha
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);  
+        }
 
         // Detecta si está corriendo
         isRunning = Input.GetKey(KeyCode.UpArrow);
 
-
-        /*moveInput = Input.GetAxisRaw("Horizontal");  // Obtiene el input horizontal (teclado o joystick)
-
-        // Cambia la velocidad según si está corriendo o no
-        float currentSpeed = isRunning ? runSpeed : walkSpeed;
-        rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
-
-        // Cambia la rotación del personaje según la dirección
-        if (moveInput < 0)
-            transform.rotation = Quaternion.Euler(0, 180, 0);  // Mira a la izquierda
-        else if (moveInput > 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0);  // Mira a la derecha
-
-        // Verifica si el jugador está corriendo
-        isRunning = Input.GetKey(KeyCode.UpArrow);  // El jugador corre cuando se mantiene presionada la tecla "arriba"*/
+        
+        // si la velocidad es menor a 0.1f mario se para 
+     
+        if (Mathf.Abs(rb.velocity.x) < 0.1f)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);  
+           
+        }
     }
 
     // Verifica si el jugador está en el suelo
@@ -138,7 +145,7 @@ public class Player : MonoBehaviour
         transform.localScale = new Vector3(1f, 1f, 1f); // Restaura el tamaño original de Mario
     }
 
-    // Método que respawnea al jugador después de morir
+    // Método que resetear al jugador después de morir
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(2f);  // Espera 2 segundos para la animación de muerte

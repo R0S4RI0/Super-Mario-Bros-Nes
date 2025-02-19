@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockBase : MonoBehaviour
 {
     bool isBouncing = false;
+    public int points = 100;
     public void Hit()
     {
         if (!this.isBouncing)
@@ -12,6 +13,12 @@ public class BlockBase : MonoBehaviour
             StartCoroutine(this.Bouncing());
 
         }
+
+        // Llama al ScoreManager para agregar puntos
+        ScoreManager.Instance.AddScore(points);
+
+        // Desactiva o destruye el bloque
+        Destroy(gameObject);
     }
 
     private IEnumerator Bouncing()
