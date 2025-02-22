@@ -33,9 +33,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal"); // Obtiene el input horizontal
-        
-        
-        
+
         CheckJump();
 
         // Actualiza los parámetros del Animator
@@ -43,19 +41,17 @@ public class Player : MonoBehaviour
         animator.SetBool("isJumping", !isGrounded);  // Si está saltando
         animator.SetBool("isRunning", isRunning);  // Si está corriendo
     }
+
     private void FixedUpdate()
     {
         Move();
     }
-    
+
     // Mueve al jugador
     void Move()
     {
-        
-
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
-        Vector2 force = new Vector2(moveInput * currentSpeed * 2f, 0); 
-       // rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
+        Vector2 force = new Vector2(moveInput * currentSpeed * 2f, 0);
 
         rb.AddForce(force, ForceMode2D.Force); // Aplica la fuerza de manera progresiva
 
@@ -63,27 +59,22 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -currentSpeed, currentSpeed), rb.velocity.y);
 
         // Cambia la dirección de Mario
-        
-    
         if (moveInput < 0)  // Si se mueve hacia la izquierda
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);  
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if (moveInput > 0)  // Si se mueve hacia la derecha
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);  
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
         // Detecta si está corriendo
         isRunning = Input.GetKey(KeyCode.UpArrow);
 
-        
-        // si la velocidad es menor a 0.1f mario se para 
-     
+        // si la velocidad es menor a 0.1f Mario se para 
         if (Mathf.Abs(rb.velocity.x) < 0.1f)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);  
-           
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
@@ -126,6 +117,15 @@ public class Player : MonoBehaviour
         }
         else
         {
+            // Aplica una pequeña fuerza hacia arriba al morir
+            rb.velocity = new Vector2(rb.velocity.x, 5f); // Ajusta el valor según lo que necesites
+
+            // Cambiar la capa de "Player" a una capa que no interactúe con los objetos del juego
+            gameObject.layer = LayerMask.NameToLayer("Death");  // Asegúrate de que la capa "Death" exista en el Editor de Unity
+
+            // Desactivar el Collider2D para que Mario no colisione con el mundo mientras cae
+            col.enabled = false;
+
             animator.SetTrigger("Die"); // Activa la animación de muerte
             StartCoroutine(Respawn());  // Espera para reiniciar el nivel
         }
@@ -149,6 +149,11 @@ public class Player : MonoBehaviour
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(2f);  // Espera 2 segundos para la animación de muerte
+
+        // Restaura la capa y habilita el collider
+        gameObject.layer = LayerMask.NameToLayer("Player");  // Restaura la capa de "Player"
+        col.enabled = true;  // Habilita el collider para que Mario interactúe con el mundo nuevamente
+
         RestartLevel();  // Reinicia el nivel
     }
 

@@ -2312,8 +2312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2609,6 +2609,8 @@ MonoBehaviour:
   coins: 1
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &992435185
 Rigidbody2D:
   serializedVersion: 4
@@ -3109,6 +3111,8 @@ MonoBehaviour:
   coins: 1
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &1167618262
 Rigidbody2D:
   serializedVersion: 4
@@ -3575,6 +3579,8 @@ MonoBehaviour:
   coins: 2
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &1389417841
 Rigidbody2D:
   serializedVersion: 4
@@ -11861,6 +11867,8 @@ MonoBehaviour:
   coins: 2
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &1604831199
 Rigidbody2D:
   serializedVersion: 4
@@ -12062,6 +12070,8 @@ MonoBehaviour:
   coins: 1
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &1625578695
 Rigidbody2D:
   serializedVersion: 4
@@ -12463,6 +12473,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4491033653082197676, guid: f844a460b33703442ab46b55fe0781c5, type: 3}
   m_PrefabInstance: {fileID: 280845920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1772345366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6334066587097818318, guid: b1710716025796345b135f179ef6775c, type: 3}
+  m_PrefabInstance: {fileID: 1676397775403781397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1806661872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4491033653082197676, guid: f844a460b33703442ab46b55fe0781c5, type: 3}
@@ -12613,6 +12628,8 @@ MonoBehaviour:
   coins: 2
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 0}
+  mushroomPrefab: {fileID: 0}
 --- !u!50 &1960285469
 Rigidbody2D:
   serializedVersion: 4
@@ -12836,6 +12853,8 @@ MonoBehaviour:
   coins: 3
   coin: {fileID: 5851615664937110148, guid: 0e93eb9153b98c14690cc8c0908e97aa, type: 3}
   bloqueInvencible: {fileID: 7214280695540932031, guid: 12122d17fafd8ab4f9d4efcb3bafeb88, type: 3}
+  lifePrefab: {fileID: 4372785737622877603, guid: d2bdcefadee213040bba03d4e37f0010, type: 3}
+  mushroomPrefab: {fileID: 5759246648321367676, guid: ef66523ca961a814f848321eba1341e7, type: 3}
 --- !u!50 &2045194852
 Rigidbody2D:
   serializedVersion: 4
@@ -13205,6 +13224,10 @@ PrefabInstance:
       value: Mario
       objectReference: {fileID: 0}
     - target: {fileID: 7097487974398440650, guid: b1710716025796345b135f179ef6775c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097487974398440650, guid: b1710716025796345b135f179ef6775c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.92
       objectReference: {fileID: 0}
@@ -13277,6 +13300,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1710716025796345b135f179ef6775c, type: 3}
+--- !u!1001 &1796904581502700480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 233086675740173161, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: mario
+      value: 
+      objectReference: {fileID: 1772345366}
+    - target: {fileID: 5759246648321367676, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_Name
+      value: Mushroomcrecer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780236609972381667, guid: ef66523ca961a814f848321eba1341e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef66523ca961a814f848321eba1341e7, type: 3}
 --- !u!1001 &2151829064990819165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13334,6 +13418,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f844a460b33703442ab46b55fe0781c5, type: 3}
+--- !u!1001 &7215028317239715720
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183125110058625519, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571610235592056231, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
+      propertyPath: m_Name
+      value: BlockBreak
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e8e2c0eb1807284384c2a0cb844e6e2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13346,8 +13487,10 @@ SceneRoots:
   - {fileID: 598915857541392830}
   - {fileID: 1589772052}
   - {fileID: 699656559}
+  - {fileID: 7215028317239715720}
   - {fileID: 809124986}
   - {fileID: 851175909}
   - {fileID: 1096647181}
   - {fileID: 867216991}
   - {fileID: 1282248049}
+  - {fileID: 1796904581502700480}

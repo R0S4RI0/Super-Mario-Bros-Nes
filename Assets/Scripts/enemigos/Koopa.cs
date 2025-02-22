@@ -11,6 +11,8 @@ public class Koopa : MonoBehaviour, IEnemy  // Implementa la interfaz IEnemy
     private bool isMovingShell = false; // Indica si el caparazón se está moviendo
     private EnemyAnimator enemyAnimator;
 
+   
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
